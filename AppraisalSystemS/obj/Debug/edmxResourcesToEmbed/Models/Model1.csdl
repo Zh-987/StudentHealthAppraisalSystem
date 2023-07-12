@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppraisalSysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin_tbl">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="admin_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="admin_password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Comp_Organ" Relationship="AppraisalSysModel.FK__Comp_Orga__admin__5DCAEF64" FromRole="Admin_tbl" ToRole="Comp_Organ" />
+    <NavigationProperty Name="Student_tbl" Relationship="AppraisalSysModel.FK__Student_t__admin__5EBF139D" FromRole="Admin_tbl" ToRole="Student_tbl" />
+  </EntityType>
+  <EntityType Name="Comp_Organ">
+    <Key>
+      <PropertyRef Name="comp_organ_id" />
+    </Key>
+    <Property Name="comp_organ_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="comp_organ_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="comp_organ_password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Indicat_of_physiol" Relationship="Self.FK__Indicat_o__Indic__2D27B809" FromRole="Comp_Organ" ToRole="Indicat_of_physiol" />
+    <NavigationProperty Name="Pedag_test" Relationship="Self.FK__Pedag_tes__Pedag__33D4B598" FromRole="Comp_Organ" ToRole="Pedag_test" />
+    <Property Name="comp_organ_full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comp_organ_position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_FK" Type="Int32" />
+    <NavigationProperty Name="Admin_tbl" Relationship="AppraisalSysModel.FK__Comp_Orga__admin__5DCAEF64" FromRole="Comp_Organ" ToRole="Admin_tbl" />
+    <NavigationProperty Name="Student_tbl" Relationship="AppraisalSysModel.FK__Student_t__comp___5CD6CB2B" FromRole="Comp_Organ" ToRole="Student_tbl" />
+  </EntityType>
+  <EntityType Name="Indicat_of_physiol">
+    <Key>
+      <PropertyRef Name="indicat_of_physiol_id" />
+    </Key>
+    <Property Name="indicat_of_physiol_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Iheight" Type="Decimal" Precision="4" Scale="1" />
+    <Property Name="Iweight" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Iogk" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="IogkVd" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="IogkVyd" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Izhi" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Ichss" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Iadsys" Type="Decimal" Precision="4" Scale="1" />
+    <Property Name="Iaddias" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Izhel" Type="Decimal" Precision="5" Scale="1" />
+    <Property Name="Ido" Type="Decimal" Precision="4" Scale="1" />
+    <Property Name="Imod" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="Ishtang" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Igenchi" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Ichp" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Iadaptp" Type="Decimal" Precision="6" Scale="4" />
+    <Property Name="Impk" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Ipwc" Type="Decimal" Precision="4" Scale="1" />
+    <Property Name="Ivremz" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Ikolnaklon" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="Ipone" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Iptwo" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Ipthree" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Indicat_of_physiol_FK_Organ" Type="Int32" />
+    <Property Name="Indicat_of_physiol_FK_STU" Type="Int32" />
+    <NavigationProperty Name="Comp_Organ" Relationship="Self.FK__Indicat_o__Indic__2D27B809" FromRole="Indicat_of_physiol" ToRole="Comp_Organ" />
+    <NavigationProperty Name="Student_tbl" Relationship="Self.FK__Indicat_o__Indic__2E1BDC42" FromRole="Indicat_of_physiol" ToRole="Student_tbl" />
+    <Property Name="Irufie" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Iskibin" Type="Decimal" Precision="5" Scale="1" />
+    <Property Name="Ishapal" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="Irobinson" Type="Decimal" Precision="4" Scale="1" />
+  </EntityType>
+  <EntityType Name="Pedag_test">
+    <Key>
+      <PropertyRef Name="Pedag_test_id" />
+    </Key>
+    <Property Name="Pedag_test_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="begsto" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="begtys" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="pryzhvdlin" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="standinam" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="kistdinamlev" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="kistdinamprav" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="podtyagiv" Type="Decimal" Precision="2" Scale="0" />
+    <Property Name="pres" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="pryzhkisrazbega" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="begtrid" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="metangran" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="chelnochnbeg" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="testkuper" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="Pedag_test_FK_Organ" Type="Int32" />
+    <Property Name="Pedag_test_FK_STU" Type="Int32" />
+    <NavigationProperty Name="Comp_Organ" Relationship="Self.FK__Pedag_tes__Pedag__33D4B598" FromRole="Pedag_test" ToRole="Comp_Organ" />
+    <NavigationProperty Name="Student_tbl" Relationship="Self.FK__Pedag_tes__Pedag__34C8D9D1" FromRole="Pedag_test" ToRole="Student_tbl" />
+  </EntityType>
+  <EntityType Name="Student_tbl">
+    <Key>
+      <PropertyRef Name="student_id" />
+    </Key>
+    <Property Name="student_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="student_login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_fullname" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_course" Type="Int32" />
+    <Property Name="student_speciality" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_univer" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="student_gender" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Indicat_of_physiol" Relationship="Self.FK__Indicat_o__Indic__2E1BDC42" FromRole="Student_tbl" ToRole="Indicat_of_physiol" />
+    <NavigationProperty Name="Pedag_test" Relationship="Self.FK__Pedag_tes__Pedag__34C8D9D1" FromRole="Student_tbl" ToRole="Pedag_test" />
+    <Property Name="comp_organ_FK" Type="Int32" />
+    <NavigationProperty Name="Comp_Organ" Relationship="AppraisalSysModel.FK__Student_t__comp___5CD6CB2B" FromRole="Student_tbl" ToRole="Comp_Organ" />
+    <Property Name="admin_FK" Type="Int32" />
+    <NavigationProperty Name="Admin_tbl" Relationship="AppraisalSysModel.FK__Student_t__admin__5EBF139D" FromRole="Student_tbl" ToRole="Admin_tbl" />
+  </EntityType>
+  <Association Name="FK__Indicat_o__Indic__2D27B809">
+    <End Role="Comp_Organ" Type="Self.Comp_Organ" Multiplicity="0..1" />
+    <End Role="Indicat_of_physiol" Type="Self.Indicat_of_physiol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comp_Organ">
+        <PropertyRef Name="comp_organ_id" />
+      </Principal>
+      <Dependent Role="Indicat_of_physiol">
+        <PropertyRef Name="Indicat_of_physiol_FK_Organ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedag_tes__Pedag__33D4B598">
+    <End Role="Comp_Organ" Type="Self.Comp_Organ" Multiplicity="0..1" />
+    <End Role="Pedag_test" Type="Self.Pedag_test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comp_Organ">
+        <PropertyRef Name="comp_organ_id" />
+      </Principal>
+      <Dependent Role="Pedag_test">
+        <PropertyRef Name="Pedag_test_FK_Organ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Indicat_o__Indic__2E1BDC42">
+    <End Role="Student_tbl" Type="Self.Student_tbl" Multiplicity="0..1" />
+    <End Role="Indicat_of_physiol" Type="Self.Indicat_of_physiol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student_tbl">
+        <PropertyRef Name="student_id" />
+      </Principal>
+      <Dependent Role="Indicat_of_physiol">
+        <PropertyRef Name="Indicat_of_physiol_FK_STU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedag_tes__Pedag__34C8D9D1">
+    <End Role="Student_tbl" Type="Self.Student_tbl" Multiplicity="0..1" />
+    <End Role="Pedag_test" Type="Self.Pedag_test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student_tbl">
+        <PropertyRef Name="student_id" />
+      </Principal>
+      <Dependent Role="Pedag_test">
+        <PropertyRef Name="Pedag_test_FK_STU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AppraisalSysEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin_tbl" EntityType="Self.Admin_tbl" />
+    <EntitySet Name="Comp_Organ" EntityType="Self.Comp_Organ" />
+    <EntitySet Name="Indicat_of_physiol" EntityType="Self.Indicat_of_physiol" />
+    <EntitySet Name="Pedag_test" EntityType="Self.Pedag_test" />
+    <EntitySet Name="Student_tbl" EntityType="Self.Student_tbl" />
+    <AssociationSet Name="FK__Indicat_o__Indic__2D27B809" Association="Self.FK__Indicat_o__Indic__2D27B809">
+      <End Role="Comp_Organ" EntitySet="Comp_Organ" />
+      <End Role="Indicat_of_physiol" EntitySet="Indicat_of_physiol" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedag_tes__Pedag__33D4B598" Association="Self.FK__Pedag_tes__Pedag__33D4B598">
+      <End Role="Comp_Organ" EntitySet="Comp_Organ" />
+      <End Role="Pedag_test" EntitySet="Pedag_test" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Indicat_o__Indic__2E1BDC42" Association="Self.FK__Indicat_o__Indic__2E1BDC42">
+      <End Role="Student_tbl" EntitySet="Student_tbl" />
+      <End Role="Indicat_of_physiol" EntitySet="Indicat_of_physiol" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedag_tes__Pedag__34C8D9D1" Association="Self.FK__Pedag_tes__Pedag__34C8D9D1">
+      <End Role="Student_tbl" EntitySet="Student_tbl" />
+      <End Role="Pedag_test" EntitySet="Pedag_test" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comp_Orga__admin__5DCAEF64" Association="AppraisalSysModel.FK__Comp_Orga__admin__5DCAEF64">
+      <End Role="Admin_tbl" EntitySet="Admin_tbl" />
+      <End Role="Comp_Organ" EntitySet="Comp_Organ" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student_t__comp___5CD6CB2B" Association="AppraisalSysModel.FK__Student_t__comp___5CD6CB2B">
+      <End Role="Comp_Organ" EntitySet="Comp_Organ" />
+      <End Role="Student_tbl" EntitySet="Student_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student_t__admin__5EBF139D" Association="AppraisalSysModel.FK__Student_t__admin__5EBF139D">
+      <End Role="Admin_tbl" EntitySet="Admin_tbl" />
+      <End Role="Student_tbl" EntitySet="Student_tbl" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK__Comp_Orga__admin__5DCAEF64">
+    <End Type="AppraisalSysModel.Admin_tbl" Role="Admin_tbl" Multiplicity="0..1" />
+    <End Type="AppraisalSysModel.Comp_Organ" Role="Comp_Organ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin_tbl">
+        <PropertyRef Name="admin_id" />
+      </Principal>
+      <Dependent Role="Comp_Organ">
+        <PropertyRef Name="admin_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student_t__comp___5CD6CB2B">
+    <End Type="AppraisalSysModel.Comp_Organ" Role="Comp_Organ" Multiplicity="0..1" />
+    <End Type="AppraisalSysModel.Student_tbl" Role="Student_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comp_Organ">
+        <PropertyRef Name="comp_organ_id" />
+      </Principal>
+      <Dependent Role="Student_tbl">
+        <PropertyRef Name="comp_organ_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student_t__admin__5EBF139D">
+    <End Type="AppraisalSysModel.Admin_tbl" Role="Admin_tbl" Multiplicity="0..1" />
+    <End Type="AppraisalSysModel.Student_tbl" Role="Student_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin_tbl">
+        <PropertyRef Name="admin_id" />
+      </Principal>
+      <Dependent Role="Student_tbl">
+        <PropertyRef Name="admin_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

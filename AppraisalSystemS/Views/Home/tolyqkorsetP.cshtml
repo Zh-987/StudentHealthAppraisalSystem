@@ -1,0 +1,134 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<AppraisalSystemS.Models.Pedag_test>
+
+@{
+    ViewBag.Title = "Педагогикалық тестілердің көрсеткіштері";
+    Layout = "~/Views/Shared/_LayoutComp_Organ.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Студент логині
+        </th>
+        <th>
+            Жүгіру 100 м, с
+        </th>
+        <th>
+            Жүгіру 1000 м, мин
+        </th>
+        <th>
+            Бір жерден ұзындыққа секіру, см
+        </th>
+        <th>
+            Станолық динамометрия, кг
+        </th>
+        <th>
+            Cол қол динамометриясы, кг
+        </th>
+        <th>
+            Оң қол динамометриясы, кг
+        </th>
+        <th>
+            Тартылу (рет)
+        </th>
+        <th>
+            Пресс (мин/рет)
+        </th>
+        <th>
+            Жүгіріп барып ұзындыққа секіру, см
+        </th>
+        <th>
+            Жүгіру, 30м, с
+        </th>
+        <th>
+            Граната лақтыру, м
+        </th>
+        <th>
+            Шаттл жүгіру(Челночный бег) 3 * 10 м, с
+        </th>
+        <th>
+            Купер тесті м, (12 мин)
+        </th>
+
+        <th>
+           Перонал логині
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Student_tbl.student_login)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.begsto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.begtys)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pryzhvdlin)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.standinam)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.kistdinamlev)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.kistdinamprav)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.podtyagiv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pres)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pryzhkisrazbega)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.begtrid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.metangran)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.chelnochnbeg)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.testkuper)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Comp_Organ.comp_organ_name)
+    </td>
+    <td>
+        @Html.ActionLink("Өзгерту", "EditCompPedagog", new { id = item.Pedag_test_id }) |
+        @Html.ActionLink("Нақтырақ", "DetailsCompPedagog", new { id = item.Pedag_test_id }) |
+        @Html.ActionLink("Өшіру", "DeleteCompPedagog", new { id = item.Pedag_test_id })
+    </td>
+</tr>
+    }
+
+</table>
+
+
+
+<div id="container" style="margin-left:20px">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Бет @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        /    @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("tolyqkorsetP", new { page }))
+    </div>
+</div>
+

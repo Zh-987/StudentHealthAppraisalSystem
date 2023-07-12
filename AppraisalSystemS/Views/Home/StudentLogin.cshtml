@@ -1,0 +1,67 @@
+﻿@model AppraisalSystemS.Models.Student_tbl
+
+
+@{
+    ViewBag.Title = "Кіру";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+}
+
+<br />
+<br />
+<br />
+<h2 style="text-align:center">Кіру</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal" style="margin-left:25%">
+    <h4></h4>
+    <br />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <b class="control-label col-md-2"> <span class="input-group-text"> <i class="fa fa-envelope"></i> </span></b>
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.student_login, new { htmlAttributes = new { @class = "form-control", @placeholder = "Логин: ", } })
+            @Html.ValidationMessageFor(model => model.student_login, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="control-label col-md-2"> <span class="input-group-text"> <i class="fa fa-lock"></i> </span></b>
+
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.student_password, new { @class = "form-control", @placeholder = "Құпия сөз: ", })
+            @Html.ValidationMessageFor(model => model.student_password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Кіру" class="btn btn-info btn-block" />
+        </div>
+    </div>
+
+    <div>
+        <p class="text-dark" style="margin-left:160px">Егер тіркелмеген болсаңыз ! @Html.ActionLink("Тіркелу !", "studentregister")</p>
+    </div>
+
+    <div>
+        <p class="text-dark" style="margin-left:90px">Егер ОФП педагогі немесе мед. қызметкер болсаңыз ! @Html.ActionLink("Кіру !", "CompOrgan")</p>
+    </div>
+
+
+
+</div>
+}
+
+
+
+
+<p style="color:red">@ViewBag.msg</p>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

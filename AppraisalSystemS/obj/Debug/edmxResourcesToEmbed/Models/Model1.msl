@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище AppraisalSysModelContainer" CdmEntityContainer="AppraisalSysEntities">
+    <EntitySetMapping Name="Admin_tbl">
+      <EntityTypeMapping TypeName="AppraisalSysModel.Admin_tbl">
+        <MappingFragment StoreEntitySet="Admin_tbl">
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+          <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comp_Organ">
+      <EntityTypeMapping TypeName="AppraisalSysModel.Comp_Organ">
+        <MappingFragment StoreEntitySet="Comp_Organ">
+          <ScalarProperty Name="admin_FK" ColumnName="admin_FK" />
+          <ScalarProperty Name="comp_organ_position" ColumnName="comp_organ_position" />
+          <ScalarProperty Name="comp_organ_full_name" ColumnName="comp_organ_full_name" />
+          <ScalarProperty Name="comp_organ_id" ColumnName="comp_organ_id" />
+          <ScalarProperty Name="comp_organ_name" ColumnName="comp_organ_name" />
+          <ScalarProperty Name="comp_organ_password" ColumnName="comp_organ_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Indicat_of_physiol">
+      <EntityTypeMapping TypeName="AppraisalSysModel.Indicat_of_physiol">
+        <MappingFragment StoreEntitySet="Indicat_of_physiol">
+          <ScalarProperty Name="Irobinson" ColumnName="Irobinson" />
+          <ScalarProperty Name="Ishapal" ColumnName="Ishapal" />
+          <ScalarProperty Name="Iskibin" ColumnName="Iskibin" />
+          <ScalarProperty Name="Irufie" ColumnName="Irufie" />
+          <ScalarProperty Name="indicat_of_physiol_id" ColumnName="indicat_of_physiol_id" />
+          <ScalarProperty Name="Iheight" ColumnName="Iheight" />
+          <ScalarProperty Name="Iweight" ColumnName="Iweight" />
+          <ScalarProperty Name="Iogk" ColumnName="Iogk" />
+          <ScalarProperty Name="IogkVd" ColumnName="IogkVd" />
+          <ScalarProperty Name="IogkVyd" ColumnName="IogkVyd" />
+          <ScalarProperty Name="Izhi" ColumnName="Izhi" />
+          <ScalarProperty Name="Ichss" ColumnName="Ichss" />
+          <ScalarProperty Name="Iadsys" ColumnName="Iadsys" />
+          <ScalarProperty Name="Iaddias" ColumnName="Iaddias" />
+          <ScalarProperty Name="Izhel" ColumnName="Izhel" />
+          <ScalarProperty Name="Ido" ColumnName="Ido" />
+          <ScalarProperty Name="Imod" ColumnName="Imod" />
+          <ScalarProperty Name="Ishtang" ColumnName="Ishtang" />
+          <ScalarProperty Name="Igenchi" ColumnName="Igenchi" />
+          <ScalarProperty Name="Ichp" ColumnName="Ichp" />
+          <ScalarProperty Name="Iadaptp" ColumnName="Iadaptp" />
+          <ScalarProperty Name="Impk" ColumnName="Impk" />
+          <ScalarProperty Name="Ipwc" ColumnName="Ipwc" />
+          <ScalarProperty Name="Ivremz" ColumnName="Ivremz" />
+          <ScalarProperty Name="Ikolnaklon" ColumnName="Ikolnaklon" />
+          <ScalarProperty Name="Ipone" ColumnName="Ipone" />
+          <ScalarProperty Name="Iptwo" ColumnName="Iptwo" />
+          <ScalarProperty Name="Ipthree" ColumnName="Ipthree" />
+          <ScalarProperty Name="Indicat_of_physiol_FK_Organ" ColumnName="Indicat_of_physiol_FK_Organ" />
+          <ScalarProperty Name="Indicat_of_physiol_FK_STU" ColumnName="Indicat_of_physiol_FK_STU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedag_test">
+      <EntityTypeMapping TypeName="AppraisalSysModel.Pedag_test">
+        <MappingFragment StoreEntitySet="Pedag_test">
+          <ScalarProperty Name="Pedag_test_id" ColumnName="Pedag_test_id" />
+          <ScalarProperty Name="begsto" ColumnName="begsto" />
+          <ScalarProperty Name="begtys" ColumnName="begtys" />
+          <ScalarProperty Name="pryzhvdlin" ColumnName="pryzhvdlin" />
+          <ScalarProperty Name="standinam" ColumnName="standinam" />
+          <ScalarProperty Name="kistdinamlev" ColumnName="kistdinamlev" />
+          <ScalarProperty Name="kistdinamprav" ColumnName="kistdinamprav" />
+          <ScalarProperty Name="podtyagiv" ColumnName="podtyagiv" />
+          <ScalarProperty Name="pres" ColumnName="pres" />
+          <ScalarProperty Name="pryzhkisrazbega" ColumnName="pryzhkisrazbega" />
+          <ScalarProperty Name="begtrid" ColumnName="begtrid" />
+          <ScalarProperty Name="metangran" ColumnName="metangran" />
+          <ScalarProperty Name="chelnochnbeg" ColumnName="chelnochnbeg" />
+          <ScalarProperty Name="testkuper" ColumnName="testkuper" />
+          <ScalarProperty Name="Pedag_test_FK_Organ" ColumnName="Pedag_test_FK_Organ" />
+          <ScalarProperty Name="Pedag_test_FK_STU" ColumnName="Pedag_test_FK_STU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_tbl">
+      <EntityTypeMapping TypeName="AppraisalSysModel.Student_tbl">
+        <MappingFragment StoreEntitySet="Student_tbl">
+          <ScalarProperty Name="admin_FK" ColumnName="admin_FK" />
+          <ScalarProperty Name="comp_organ_FK" ColumnName="comp_organ_FK" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="student_login" ColumnName="student_login" />
+          <ScalarProperty Name="student_password" ColumnName="student_password" />
+          <ScalarProperty Name="student_fullname" ColumnName="student_fullname" />
+          <ScalarProperty Name="student_course" ColumnName="student_course" />
+          <ScalarProperty Name="student_speciality" ColumnName="student_speciality" />
+          <ScalarProperty Name="student_univer" ColumnName="student_univer" />
+          <ScalarProperty Name="student_gender" ColumnName="student_gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

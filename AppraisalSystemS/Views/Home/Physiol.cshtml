@@ -1,0 +1,237 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<AppraisalSystemS.Models.Indicat_of_physiol>
+@{
+    ViewBag.Title = "Физиологиялық сынақтағы көрсеткіштерім";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h2 style="text-align:center">@ViewBag.Title </h2>
+
+
+<table class="table">
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               Бойы:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iheight)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Салмағы:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iweight)
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Кеуде шеңбері:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iogk)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                Дем алу кезіндегі кеуде шеңбері:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IogkVd)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                Дем шығару кезіндегі кеуде шеңбері:
+            </td>
+             <td>
+            @Html.DisplayFor(modelItem => item.IogkVyd)
+             </td>
+        </tr>
+
+        <tr>
+            <td>
+                Өмірлік индекс
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Izhi)
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td>
+                Жүрек соғу жиілігі:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ichss)
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td>
+                Систолалық қан қысымы:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iadsys)
+            </td>
+
+        </tr>
+
+
+        <tr><td>
+    диастолалық қан қысымы:
+</td>
+
+        <td>
+
+            @Html.DisplayFor(modelItem => item.Iaddias)
+        </td>
+
+            </tr>
+
+
+
+        <tr>
+            <td>
+                Өкпенің тіршілік сыйымдылығы:
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Izhel)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Тыныс алу көлемі:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ido)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Тыныс алудың минуттық көлемі:
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Imod)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Штанге пробасы:
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Ishtang)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+
+            <td>
+                Генчи пробасы:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Igenchi)
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+               Жүрек соғысы:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ichp)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Бейімделу әлеуеті:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iadaptp)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Оттегінің максималды шығыны:
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Impk)
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Физикалық жұмыс қабілеті немесе Physical Working Capacity:
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Ipwc)
+            </td>
+
+        </tr>
+
+
+       
+
+
+
+     
+
+
+
+       
+    }
+
+</table>
+

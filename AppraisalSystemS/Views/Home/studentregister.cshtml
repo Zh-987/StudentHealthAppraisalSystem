@@ -1,0 +1,136 @@
+﻿@model AppraisalSystemS.Models.Student_tbl
+
+
+@{
+    ViewBag.Title = "Тіркелу !";
+    Layout = "~/Views/Shared/_LayoutTORegist.cshtml";
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - приложение ASP.NET</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="~/Content/Site.css">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+}
+
+
+
+@if (ViewBag.msg != null)
+{
+    <div class="alert alert-danger">
+        <strong>Қателік!</strong> @ViewBag.msg
+    </div>
+}
+
+@using (@Html.BeginForm("studentregister", "Home", FormMethod.Post, new { enctype = "multipart/from-data" }))
+{
+
+    <div class="container">
+
+        <div class="card img-rounded">
+
+
+            <h2 class="card-title mt-5 mb-0 text-center text-dark">Порталға тіркелу !</h2>
+
+
+            <article class="card-body mx-auto">
+
+
+
+                <div class="form-horizontal">
+                    <h4></h4>
+                    <br>
+                    <br>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                            @Html.EditorFor(model => model.student_login, new { htmlAttributes = new { @class = "form-control ", @placeholder = "Логин: ", @style = "width: 255px" } })
+                            @Html.ValidationMessageFor(model => model.student_login, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+
+                    <div class="form-group input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            @Html.PasswordFor(model => model.student_password, new { @class = "form-control", @placeholder = "Құпия сөз: ", @style = "width: 256px" })
+                            @Html.ValidationMessageFor(model => model.student_password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group">
+
+                        <div class="input-group-prepend">
+
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            @Html.EditorFor(model => model.student_fullname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Толық аты-жөніңізді еңгізіңіз: ", @style = "width: 254px" } })
+
+                            @Html.ValidationMessageFor(model => model.student_fullname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-book"></i> </span>
+                            @Html.EditorFor(model => model.student_course, new { htmlAttributes = new { @class = "form-control", @placeholder = "Оқу курсыңыз: ", @style = "width: 256px" } })
+                            @Html.ValidationMessageFor(model => model.student_course, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-graduation-cap"></i> </span>
+                            @Html.EditorFor(model => model.student_speciality, new { htmlAttributes = new { @class = "form-control", @placeholder = "Оқу мамандығыңыз: ", @style = "width: 252px" } })
+                            @Html.ValidationMessageFor(model => model.student_speciality, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-university"></i> </span>
+                            @Html.EditorFor(model => model.student_univer, new { htmlAttributes = new { @class = "form-control", @placeholder = "Университетіңіз: ", @style = "width: 254px" } })
+                            @Html.ValidationMessageFor(model => model.student_univer, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-venus-mars"></i> </span>
+                            @Html.DropDownList("student_gender", new List<SelectListItem> { new SelectListItem { Text = "Ер", Value = "Ер" }, new SelectListItem { Text = "Әйел", Value = "Әйел" } }, htmlAttributes: new { @class = "form-control", @style = "width: 253px; height:32px;" })
+                            @Html.ValidationMessageFor(model => model.student_gender, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <input type="submit" value="Тіркелу" class="btn btn-primary btn-block" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-dark text-center">Егер тіркелген болсаңыз ! @Html.ActionLink("Кіру", "StudentLogin")</p>
+                    </div>
+                </div>
+                <br>
+
+            </article>
+            
+        </div>
+    </div>
+
+}
+
+

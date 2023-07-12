@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - MPAS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body >
+    <div class="navbar navbar-default navbar-fixed-top " style="background-color: #17A2B8;">
+        <div class="container">
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("MPAS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:#ddeaed" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="color:#ddeaed">
+                    <li>@Html.ActionLink("Басты бет", "Index", "Home", new {  @style = "color:#ddeaed" })</li>
+                    <li>@Html.ActionLink("Проект туралы", "About", "Home", new { @style = "color:#ddeaed" })</li>
+                    <li>@Html.ActionLink("Хабарласу", "Contact", "Home", new { @style = "color:#ddeaed" })</li>
+                    <li> @Html.ActionLink("Кіру", "StudentLogin", "Home", new { @style = "color:#ddeaed" })</li>
+                </ul>
+              
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p >&copy; @DateTime.Now.Year - MPAS</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

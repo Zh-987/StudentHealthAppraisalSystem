@@ -1,0 +1,67 @@
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<AppraisalSystemS.Models.Indicat_of_physiol>
+
+@{
+    ViewBag.Title = "Индекстер бойынша денсаулық және физикалық көрсеткіштерім:";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h2 style="text-align:center; margin-bottom:5%; margin-top:3%" >@ViewBag.Title</h2>
+
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        
+        <tr>
+            <td>
+                Индекс Скибински
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iskibin)
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Индекс Руфье
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Irufie)
+            </td>
+        </tr>
+
+
+
+        <tr>
+
+            <td>
+                Индекс Шаповаловой
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ishapal  )
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                Индекс Робинсона
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Irobinson)
+            </td>
+
+        </tr>
+
+
+    }
+
+</table>
