@@ -1,0 +1,291 @@
+﻿@model AppraisalSystemS.Models.Indicat_of_physiol
+
+@{
+    ViewBag.Title = "EditCompPhysiol";
+    Layout = "~/Views/Shared/_LayoutComp_Organ.cshtml";
+}
+
+<h2> Физиологиялық сынақтардың көрсеткіштерін өзгерту</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4> </h4>
+
+
+        <div class="form-group center-block" style="margin-top:3%">
+            @Html.LabelFor(model => model.Indicat_of_physiol_FK_STU, "Студентті таңдау", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Indicat_of_physiol_FK_STU", ViewBag.List as SelectList, "--таңдау--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Indicat_of_physiol_FK_STU, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <hr />
+
+
+
+        <div class="center-block" style="display:block; margin-top:40px">
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Iheight, new { htmlAttributes = new { @class = "form-control", @placeholder = "Бойы" } })
+                    @Html.ValidationMessageFor(model => model.Iheight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Iweight, new { htmlAttributes = new { @class = "form-control", @placeholder = "Салмағы" } })
+                    @Html.ValidationMessageFor(model => model.Iweight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <div style="display:block; margin-top:1%">
+
+
+            <div class="form-group" style="display:inline-block">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Iogk, new { htmlAttributes = new { @class = "form-control", @placeholder = "КШ" } })
+                    @Html.ValidationMessageFor(model => model.Iogk, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.IogkVd, new { htmlAttributes = new { @class = "form-control", @placeholder = "КШ дем алу" } })
+                    @Html.ValidationMessageFor(model => model.IogkVd, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.IogkVyd, new { htmlAttributes = new { @class = "form-control", @placeholder = "КШ дем шығару" } })
+                    @Html.ValidationMessageFor(model => model.IogkVyd, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <div style="display:block; margin-top:1%">
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ichss, new { htmlAttributes = new { @class = "form-control", @placeholder = "ЖСС" } })
+                    @Html.ValidationMessageFor(model => model.Ichss, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Iadsys, new { htmlAttributes = new { @class = "form-control", @placeholder = "ҚҚсист" } })
+                    @Html.ValidationMessageFor(model => model.Iadsys, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Iaddias, new { htmlAttributes = new { @class = "form-control", @placeholder = "ҚҚдист" } })
+                    @Html.ValidationMessageFor(model => model.Iaddias, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div style="display:block; margin-top:1%">
+
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Izhel, new { htmlAttributes = new { @class = "form-control", @placeholder = "ӨТС" } })
+                    @Html.ValidationMessageFor(model => model.Izhel, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ido, new { htmlAttributes = new { @class = "form-control", @placeholder = "ТАК" } })
+                    @Html.ValidationMessageFor(model => model.Ido, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Imod, new { htmlAttributes = new { @class = "form-control", @placeholder = "ТАМК" } })
+                    @Html.ValidationMessageFor(model => model.Imod, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+        </div>
+
+        <hr />
+
+        <div style="display:block; margin-top:1%">
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ishtang, new { htmlAttributes = new { @class = "form-control", @placeholder = "Штанге пробасы" } })
+                    @Html.ValidationMessageFor(model => model.Ishtang, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Igenchi, new { htmlAttributes = new { @class = "form-control", @placeholder = "Генчи пробасы" } })
+                    @Html.ValidationMessageFor(model => model.Igenchi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+        </div>
+
+        <hr />
+
+
+        <div style="display:block; margin-top:1%">
+
+            <p>Бейімделу әлеуеті </p>
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ichp, new { htmlAttributes = new { @class = "form-control", @placeholder = "Жүрек соғысы" } })
+                    @Html.ValidationMessageFor(model => model.Ichp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+
+
+        <hr />
+        <div style="display:block; margin-top:1%">
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Impk, new { htmlAttributes = new { @class = "form-control", @placeholder = "ОМШ" } })
+                    @Html.ValidationMessageFor(model => model.Impk, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ipwc, new { htmlAttributes = new { @class = "form-control", @placeholder = "PWC170" } })
+                    @Html.ValidationMessageFor(model => model.Ipwc, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <hr />
+
+
+        <div style="display:block; margin-top:1%">
+
+            <p>Индекс Скибински</p>
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ivremz, new { htmlAttributes = new { @class = "form-control", @placeholder = "Демді ұстап тұру уақыты" } })
+                    @Html.ValidationMessageFor(model => model.Ivremz, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+
+        <hr />
+
+        <div style="display:block; margin-top:1%">
+            <p>Индекс Шаповаловой</p>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ikolnaklon, new { htmlAttributes = new { @class = "form-control", @placeholder = "1 мин. еңкейу саны" } })
+                    @Html.ValidationMessageFor(model => model.Ikolnaklon, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+        </div>
+        <hr />
+
+        <div style="display:block; margin-top:1%">
+
+            <p>Индекс Руфье </p>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ipone, new { htmlAttributes = new { @class = "form-control", @placeholder = "P1" } })
+                    @Html.ValidationMessageFor(model => model.Ipone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Iptwo, new { htmlAttributes = new { @class = "form-control", @placeholder = "P2" } })
+                    @Html.ValidationMessageFor(model => model.Iptwo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="display:inline-block;">
+
+                <div class="col-md-10" style="margin-left:5px">
+                    @Html.EditorFor(model => model.Ipthree, new { htmlAttributes = new { @class = "form-control", @placeholder = "P3" } })
+                    @Html.ValidationMessageFor(model => model.Ipthree, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+        </div>
+
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Сақтау" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Тізімге қайту", "tolyqkorsetI")
+</div>
+

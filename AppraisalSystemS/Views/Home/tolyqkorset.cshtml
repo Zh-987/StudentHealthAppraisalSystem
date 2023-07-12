@@ -1,0 +1,275 @@
+﻿@model AppraisalSystemS.Models.Comp_Organ
+@{
+    ViewBag.Title = "Көрсеткіштер бойынша есеп беру";
+    Layout = "~/Views/Shared/_LayoutComp_Organ.cshtml";
+}
+
+
+
+<style>
+    a.classname {
+        margin-top: 100px;
+        background-color: #17A2B8;
+        display: inline-block;
+        width: 250px;
+        height: 80px;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+    }
+
+    a.classname2 {
+        margin-top: 100px;
+        background-color: #17A2B8;
+        margin-left: 40px;
+        display: inline-block;
+        border-radius: 10px;
+        width: 250px;
+        height: 80px;
+        color: white;
+        text-align: center;
+    }
+</style>
+<h2 class="text-center">Көрсеткіштер бойынша есеп беру</h2>
+
+<div class="text-center">
+@Html.ActionLink("Физиологиялық сынақтардың көрсеткіштері", "tolyqkorsetI", "Home", new { @class = "classname " })
+@Html.ActionLink("Педагогикалық тестілердің көрсеткіштері", "tolyqkorsetP", "Home", new { @class = "classname2 " })
+
+    </div>
+<br>
+<br>
+
+
+<h3 class="text-center">Барлық студенттердің орташа көрсеткіштері</h3>
+<h5 class="text-center">Аналитикалық талдау</h5>
+
+<br>
+<br>
+<br>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="" style="margin-bottom:3%">
+            <input type="submit" value="жаңарту" class="btn btn-primary" />
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h4 class="text-center" style="margin-bottom:3%">Физиологиялық көрсеткіштері</h4>
+        <table class="table table-hover" style="font-size:18px">
+
+
+            <tbody>
+                <tr class="info">
+                    <td>&nbsp;Бойы:</td>
+                    <td align="left">&nbsp;@ViewBag.Iheight</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Салмағы</td>
+                    <td align="left">&nbsp;@ViewBag.Iweight</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Кеуде шеңбері:</td>
+                    <td align="left">&nbsp;@ViewBag.Iogk</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Дем алу кезіндегі кеуде шеңбері:</td>
+                    <td align="left">&nbsp;@ViewBag.IogkVd</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Дем шығару кезіндегі кеуде шеңбері:</td>
+                    <td align="left">&nbsp;@ViewBag.IogkVyd</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Өмірлік индекс:</td>
+                    <td align="left">&nbsp;@ViewBag.Izhi</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Жүрек соғу жиілігі:</td>
+                    <td align="left">&nbsp;@ViewBag.Ichss</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Тыныс алу көлемі :</td>
+                    <td align="left">&nbsp;@ViewBag.Ido</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Тыныс алудың минуттық көлемі:</td>
+                    <td align="left">&nbsp;@ViewBag.Imod</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Штанге пробасы:</td>
+                    <td align="left">&nbsp;@ViewBag.Istang</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Генчи пробасы:</td>
+                    <td align="left">&nbsp;@ViewBag.Igenchi</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Бейімделу әлеуеті:</td>
+                    <td align="left">&nbsp;@ViewBag.Iadaptp</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Оттегінің максималды шығыны:</td>
+                    <td align="left">&nbsp;@ViewBag.Impk</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+                <tr>
+                    <td>&nbsp;Физикалық жұмыс қабілеті (pwc170)</td>
+                    <td align="left">&nbsp;@ViewBag.Ipwc</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Студенттердің Руфье индексі:</td>
+                    <td align="left">&nbsp;@ViewBag.rufie</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Студенттердің Шапалова индексі:</td>
+                    <td align="left">&nbsp;@ViewBag.shapal</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+                <tr>
+                    <td>&nbsp;Студенттердің Скибинский индексі:</td>
+                    <td align="left">&nbsp;@ViewBag.skibin</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+                <tr>
+                    <td>&nbsp;Студенттердің Робинсон индексі:</td>
+                    <td align="left">&nbsp;@ViewBag.robinson</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <br>
+
+    </div>
+
+
+
+    <h4 class="text-center" style="margin-bottom:3%">Педагогикалық көрсеткіштері</h4>
+
+    <div class="container">
+        <table class="table table-hover" style="font-size:18px">
+
+
+            <tbody>
+                <tr class="info">
+                    <td>&nbsp;Жүгіру 100 м, с:</td>
+                    <td align="left">&nbsp;@ViewBag.begsto </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Жүгіру 1000 м, мин:</td>
+                    <td align="left">&nbsp;@ViewBag.begtys</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Бір жерден ұзындыққа секіру, см:</td>
+                    <td align="left">&nbsp;@ViewBag.pryzhvdlin</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Станолық динамометрия, кг:</td>
+                    <td align="left">&nbsp;@ViewBag.standinam</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Сол қол динамометриясы, кг:</td>
+                    <td align="left">&nbsp;@ViewBag.kistdinamlev</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Оң қол динамометриясы, кг:</td>
+                    <td align="left">&nbsp;@ViewBag.kistdinamprav </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Тартылу (рет):</td>
+                    <td align="left">&nbsp;@ViewBag.podtyagiv</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Пресс (мин/рет):</td>
+                    <td align="left">&nbsp;@ViewBag.pres</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Жүгіріп барып ұзындыққа секіру, см:</td>
+                    <td align="left">&nbsp;@ViewBag.pryzhkisrazbega</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Жүгіру, 30м, с:</td>
+                    <td align="left">&nbsp;@ViewBag.begtrid</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Граната лақтыру, м:</td>
+                    <td align="left">&nbsp;@ViewBag.metangran</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Шаттл жүгіру(Челночный бег) 3 * 10 м, с:</td>
+                    <td align="left">&nbsp;@ViewBag.chelnochnbeg</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;Купер тесті м, (12 мин):</td>
+                    <td align="left">&nbsp;@ViewBag.testkuper</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br>
+
+    </div>
+
+
+}

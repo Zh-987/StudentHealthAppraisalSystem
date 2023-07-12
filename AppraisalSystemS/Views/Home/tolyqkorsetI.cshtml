@@ -1,0 +1,221 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<AppraisalSystemS.Models.Indicat_of_physiol>
+
+
+@{
+    ViewBag.Title = "Физиологиялық сынақтардың көрсеткіштері";
+    Layout = "~/Views/Shared/_LayoutComp_Organ.cshtml";
+}
+
+<h2> @ViewBag.Title </h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Студент логин
+        </th>
+        <th>
+            Бойы
+        </th>
+        <th>
+            Салмағы
+        </th>
+        <th>
+            КШ
+        </th>
+        <th>
+            КШ дем алу
+        </th>
+        <th>
+            КШ дем шығару
+        </th>
+        <th>
+            ӨИ
+        </th>
+        <th>
+            ЖСС соғу / мин
+        </th>
+        <th>
+            ҚҚсист
+        </th>
+        <th>
+            ҚҚдист
+        </th>
+        <th>
+            ӨТС
+        </th>
+        <th>
+            ТАК
+        </th>
+        <th>
+            ТАМК
+        </th>
+        <th>
+            Штанге пробасы
+        </th>
+        <th>
+            Генчи пробасы
+        </th>
+        <th>
+            Жүрек соғысы
+        </th>
+        <th>
+            Бейімделу әлеуеті
+        </th>
+        <th>
+            ОМШ
+        </th>
+        <th>
+            PWC170
+        </th>
+        <th>
+            Демді ұстап тұру уақыты
+        </th>
+        <th>
+            1 мин еңкейу саны
+        </th>
+        <th>
+            P1(Руфье)
+        </th>
+        <th>
+            P2(Руфье)
+        </th>
+        <th>
+            P3(Руфье)
+        </th>
+
+        <th>
+            Индекс Руфье
+        </th>
+        <th>
+            Индекс Скибински
+        </th>
+        <th>
+            Индекс Шаповаловой
+
+        </th>
+        <th>
+            Индекс Робинсона
+
+        </th>
+
+
+        <th>
+            Логин персонала
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Student_tbl.student_login)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iheight)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iweight)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iogk)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IogkVd)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IogkVyd)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Izhi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ichss)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iadsys)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iaddias)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Izhel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Imod)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ishtang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Igenchi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ichp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iadaptp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Impk)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ipwc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ivremz)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ikolnaklon)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ipone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iptwo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ipthree)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Irufie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iskibin)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ishapal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Irobinson)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Comp_Organ.comp_organ_name)
+    </td>
+    <td>
+        @Html.ActionLink("Өзгерту", "EditCompPhysiol", new { id = item.indicat_of_physiol_id }) |
+        @Html.ActionLink("Нақтырақ", "DetailsCompPhysiol", new { id = item.indicat_of_physiol_id }) |
+        @Html.ActionLink("Өшіру", "DeleteCompPhysiol", new { id = item.indicat_of_physiol_id })
+    </td>
+</tr>
+    }
+
+</table>
+
+<div id="container" style="margin-left:20px">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Бет @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("tolyqkorsetI", new { page }))
+    </div>
+</div>
+

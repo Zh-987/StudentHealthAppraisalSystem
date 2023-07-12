@@ -1,0 +1,369 @@
+﻿@model AppraisalSystemS.Models.Indicat_of_physiol
+
+@{
+    ViewBag.Title = "DetailsCompPhysiol";
+    Layout = "~/Views/Shared/_LayoutComp_Organ.cshtml";
+}
+
+<h2 style="text-align:center"> @Model.Student_tbl.student_fullname - тің Физиологиялық сынақтардың көрсеткіштері</h2>
+
+<table class="table">
+
+
+
+    <tr>
+        <td>
+            Студент логині
+        </td>
+
+        <td>
+            @Model.Student_tbl.student_login
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            Бойы (см),
+        </td>
+        <td>
+            @Model.Iheight
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            дене салмағы, кг
+        </td>
+        <td>
+            @Model.Iweight
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            КШ-кеуде шеңбері
+        </td>
+        <td>
+            @Model.Iogk
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            КШ дем алу
+        </td>
+        <td>
+            @Model.IogkVd
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            КШ дем шығару
+        </td>
+        <td>
+            @Model.IogkVyd
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Өмірлік индекс
+        </td>
+        <td>
+
+            @Model.Izhi
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            Жүрек соғу жиілігі, соғу / мин
+        </td>
+        <td>
+            @Model.Ichss
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            Систолалық қан қысымы
+        </td>
+        <td>
+            @Model.Iadsys
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            Диастолалық қан қысымы
+        </td>
+
+        <td>
+
+            @Model.Iaddias
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            Өкпенің тіршілік сыйымдылығы
+        </td>
+
+        <td>
+            @Model.Izhel
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            тыныс алу көлемі
+        </td>
+        <td>
+            @Model.Ido
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            тыныс алудың минуттық көлемі
+        </td>
+
+        <td>
+            @Model.Imod
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            Штанге пробасы
+        </td>
+
+        <td>
+            @Model.Ishtang
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+
+        <td>
+            Генчи пробасы
+        </td>
+        <td>
+            @Model.Igenchi
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            1 мин. жүрек піульсінің соғуы
+        </td>
+        <td>
+            @Model.Ichp
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            Бейімделу әлеуеті
+        </td>
+        <td>
+            @Model.Iadaptp
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            оттегінің максималды шығыны
+        </td>
+        <td>
+            @Model.Impk
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            PWC170
+        </td>
+
+        <td>
+            @Model.Ipwc
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            Демді ұстап тұру уақыты (сек)
+        </td>
+        <td>
+            @Model.Ivremz
+        </td>
+    </tr>
+
+    <tr>
+
+        <td>
+            Индекс Скибински
+        </td>
+
+        <td>
+            @Model.Iskibin
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            1 мин. Еңкейу саны
+        </td>
+
+        <td>
+            @Model.Ikolnaklon
+        </td>
+    </tr>
+
+
+
+    <tr>
+
+        <td>
+            Индекс Шаповаловой
+        </td>
+
+        <td>
+            @Model.Ishapal
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            P1
+        </td>
+        <td>
+            @Model.Ipone
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+            P2
+        </td>
+        <td>
+            @Model.Iptwo
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+
+        <td>
+            P3
+        </td>
+
+        <td>
+            @Model.Ipthree
+        </td>
+
+    </tr>
+
+
+
+    <tr>
+
+        <td>
+            Индекс Руфье
+        </td>
+
+        <td>
+            @Model.Irufie
+        </td>
+
+    </tr>
+
+
+
+
+
+    <tr>
+
+        <td>
+            Индекс Робинсона
+        </td>
+
+        <td>
+            @Model.Irobinson
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <th>
+            Жауапты қызметкер логині
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.Comp_Organ.comp_organ_name)
+        </td>
+
+    </tr>
+
+
+
+</table>
+
+
+<div>
+    @Html.ActionLink("Тізімге қайту", "tolyqkorsetI")
+</div>

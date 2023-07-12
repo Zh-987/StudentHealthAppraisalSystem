@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - MPAS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body >
+    <div class="navbar navbar-default navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("MPAS", "CompOrganTAB", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="color:#ddeaed">
+
+                    <li>@Html.ActionLink("Физиологиялық сынақтардың көрсеткіштері", "CompOrgan_physio", "Home" )</li>
+                    <li>@Html.ActionLink("Педагогикалық тестілердің көрсеткіштері", "CompOrgan_pedagog", "Home" )</li>
+                    <li>@Html.ActionLink("Көрсеткіштер бойынша есеп беру", "tolyqkorset", "Home" )</li>
+                    <li style="color:gray">Қызметкер </li> <!-- осы жерге сешн жазлад-->
+                </ul>
+                <br>
+                @Html.ActionLink("Шығу", "Logout", "Home")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p >&copy; @DateTime.Now.Year - MPAS</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

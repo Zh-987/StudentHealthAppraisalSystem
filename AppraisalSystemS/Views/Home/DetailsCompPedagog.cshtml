@@ -1,0 +1,198 @@
+﻿@model AppraisalSystemS.Models.Pedag_test
+
+@{
+    ViewBag.Title = " Педагогикалық тестілерінің көрсеткіштері";
+    Layout = "~/Views/Shared/_LayoutComp_Organ.cshtml";
+}
+
+
+<h2 style="text-align:center"> @Model.Student_tbl.student_fullname - тің @ViewBag.Title</h2>
+
+<table class="table">
+
+    <tr>
+
+        <th>
+            Студент логині
+        </th>
+
+        <td>
+            @Model.Student_tbl.student_login
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            Жүгіру 100 м, с
+        </td>
+        <td>
+            @Model.begsto
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Жүгіру 1000 м, мин
+        </td>
+        <td>
+            @Model.begtys
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            Бір жерден ұзындыққа секіру, см
+        </td>
+
+        <td>
+            @Model.pryzhvdlin
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            Станолық динамометрия, кг
+        </td>
+        <td>
+            @Model.standinam
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Сол қол динамометриясы, кг
+        </td>
+        <td>
+            @Model.kistdinamlev
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            Оң қол динамометриясы, кг
+        </td>
+
+
+        <td>
+            @Model.kistdinamprav
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Тартылу (рет)
+        </td>
+        <td>
+            @Model.podtyagiv
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Пресс (мин/рет)
+        </td>
+
+        <td>
+            @Model.pres
+
+
+    </tr>
+
+    <tr>
+
+        <td>
+            Жүгіріп барып ұзындыққа секіру, см
+        </td>
+        <td>
+            @Model.pryzhkisrazbega
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+
+        <td>
+            Жүгіру, 30м, с
+        </td>
+        <td>
+            @Model.begtrid
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Граната лақтыру, м
+        </td>
+        <td>
+            @Model.metangran
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>
+            Шаттл жүгіру(Челночный бег) 3 * 10 м, с
+        </td>
+        <td>
+            @Model.chelnochnbeg
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Купер тесті м, (12 мин)
+        </td>
+        <td>
+            @Model.testkuper
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <th>
+            Жауапты қызметкер логині
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.Comp_Organ.comp_organ_name)
+        </td>
+
+    </tr>
+
+
+
+
+
+
+
+
+</table>
+
+<div>
+    @Html.ActionLink("Тізімге қайту", "tolyqkorsetP")
+</div>

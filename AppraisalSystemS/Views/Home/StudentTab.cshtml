@@ -1,0 +1,78 @@
+﻿@model AppraisalSystemS.Models.Student_tbl
+
+@{
+    ViewBag.Title = "Менің профилім";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<br>
+<br>
+
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+
+
+
+<br>
+<br>
+<br>
+
+<div class="container">
+    <table class="table table-hover" style="font-size:18px">
+
+
+        <tbody>
+            <tr class="info">
+                <td>&nbsp;Логиніңіз:</td>
+                <td align="left">&nbsp;@Session["student_login"]</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;Аты-Жөніңіз:</td>
+                <td align="left">&nbsp;@Session["student_fullname"]</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;Оқу курсыңыз:</td>
+                <td align="left">&nbsp;@Session["student_course"]</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;Оқу мамандыңыз:</td>
+                <td align="left">&nbsp;@Session["student_speciality"]</td>
+                <td>&nbsp;</td>
+            </tr>
+
+
+
+            <tr>
+
+                <td>&nbsp;Университетініз:</td>
+                <td align="left">
+                    &nbsp;@Session["student_univer"]
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+
+                <td> &nbsp;Жынысыңыз:</td>
+                <td align="left">&nbsp;@Session["student_gender"]</td>
+                <td>&nbsp;</td>
+            </tr>
+
+
+            <tr class="success">
+
+                <td> &nbsp; Индекс бойынша денсаулық және физикалық көрсеткіштерім:</td>
+
+                <td>&nbsp; @Html.ActionLink("Толығырақ !", "tolygyraq")</td>
+                <td>&nbsp;</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br>
+
+</div>

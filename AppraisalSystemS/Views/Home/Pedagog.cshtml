@@ -1,0 +1,171 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<AppraisalSystemS.Models.Pedag_test>
+
+@{
+    ViewBag.Title = "Педагогикалық тестілердің көрсеткіштері";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h2 style="text-align:center">@ViewBag.Title</h2>
+
+<table class="table">
+   
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                Жүгіру 100 м, с
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.begsto)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Жүгіру 1000 м, мин
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.begtys)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                Бір жерден ұзындыққа секіру, см
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.pryzhvdlin)
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td>
+                Станолық динамометрия, кг
+            </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.standinam)
+        </td>
+
+            </tr>
+
+
+        <tr>
+
+            <td>
+                Cол Қол динамометриясы, кг
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kistdinamlev)
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td>
+                Оң қол динамометриясы, кг
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.kistdinamprav)
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Тартылу (рет)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.podtyagiv)
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Пресс (мин/рет)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.pres)
+            </td>
+
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Жүгіріп барып ұзындыққа секіру, см
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pryzhkisrazbega)
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+
+            <td>
+                Жүгіру, 30м, с
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.begtrid)
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Граната лақтыру, м
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.metangran)
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Шаттл жүгіру(Челночный бег) 3 * 10 м, с
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.chelnochnbeg)
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Купер тесті м, (12 мин)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.testkuper)
+            </td>
+
+        </tr>
+
+       
+        
+        
+    }
+
+</table>

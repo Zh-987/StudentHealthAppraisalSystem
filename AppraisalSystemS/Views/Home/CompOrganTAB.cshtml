@@ -1,0 +1,48 @@
+﻿@model AppraisalSystemS.Models.Comp_Organ
+
+@{
+    ViewBag.Title = "Медициналық қызметкерлер және ОФП педагогтері";
+    Layout = "~/Views/Shared/_LayoutComp_Organ.cshtml";
+}
+
+<br>
+<br>
+
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+
+
+
+<br>
+<br>
+<br>
+
+    <div class="container">
+        <table class="table table-hover" style="font-size:18px">
+
+
+            <tbody>
+                <tr class="info">
+                    <td>&nbsp;Логиніңіз:</td>
+                    <td align="left">&nbsp;@Session["comp_organ_login"]</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Аты-Жөніңіз:</td>
+                    <td align="left">&nbsp;@Session["comp_organ_fullname"]</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Қызметіңіз:</td>
+                    <td align="left">&nbsp;@Session["comp_organ_position"]</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <br>
+
+    </div>
+

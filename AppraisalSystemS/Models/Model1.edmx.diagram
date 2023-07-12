@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2c208a2adb2f496fb9e08d11f4a8964b" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="AppraisalSysModel.Admin_tbl" Width="1.5" PointX="11.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppraisalSysModel.Comp_Organ" Width="4.125" PointX="9.625" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppraisalSysModel.Indicat_of_physiol" Width="1.5" PointX="5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppraisalSysModel.Pedag_test" Width="1.5" PointX="15.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppraisalSysModel.Student_tbl" Width="1.5" PointX="0.875" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="AppraisalSysModel.FK__Indicat_o__Indic__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="AppraisalSysModel.FK__Pedag_tes__Pedag__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="AppraisalSysModel.FK__Indicat_o__Indic__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="AppraisalSysModel.FK__Pedag_tes__Pedag__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="AppraisalSysModel.FK__Comp_Orga__admin__5DCAEF64" />
+        <AssociationConnector Association="AppraisalSysModel.FK__Student_t__comp___5CD6CB2B" />
+        <AssociationConnector Association="AppraisalSysModel.FK__Student_t__admin__5EBF139D" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

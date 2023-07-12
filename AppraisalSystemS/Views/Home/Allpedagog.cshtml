@@ -1,0 +1,66 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<AppraisalSystemS.Models.Comp_Organ>
+@{
+    ViewBag.Title = "Тіркелген медицина және педагогтар бойынша деректер";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:25px; margin-bottom:35px">Тіркелген медицина және педагогтар бойынша деректер</h2>
+
+
+@Html.ActionLink("Жаңа қызметкер қосу", "newpers", "Home", new { @class = "classname"})
+
+<table class="table" style="margin-top:10px" >
+    <tr>
+        <th>
+            Қызметкер логині
+        </th>
+
+        <th>
+            Қызметкер толық аты-жөні
+        </th>
+
+
+        <th>
+            Қызметі
+        </th>
+
+        <th>
+            Қызметкер паролі
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.comp_organ_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comp_organ_full_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comp_organ_position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comp_organ_password)
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div id="container" style="margin-left:20px">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Бет @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("Allstudents", new { page }))
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Қош келдіңіз !";
+    
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+}
+
+<div class="jumbotron" style="box-shadow: 0px 2px 25px rgba(0, 0, 0, .25);">
+    <h2 style="text-align:center">
+        Студенттердің денсаулығы мен физикалық жағдайының көрсеткіштер кешенін талдау жүйесі
+    </h2>
+    <br>
+
+    <p class="lead text-center">Жоба туралы толығырақ ақпарат алу үшін "Толықтай танысу" батырмасын басыңыз. </p>
+    <br>
+    <br>
+    <p>  @Html.ActionLink("Толықтай танысу >>", "About", "Home", new { @class = "btn btn-info btn-lg" })  </p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <h3 style="  text-align:center;">Тиімділігі</h3>
+        <p style="text-align:center;">Студенттердің денсаулығын және физикалық жағдайын онлайн бақылау , өмір сүру деңгейін арттыру !</p>
+
+    </div>
+
+    <div class="col-md-4">
+        <h3 style=" text-align:center;">Көрсеткіштер анықтамасы</h3>
+        <br>
+        <p style=" text-align:center;">
+            Біз студенттің физикалық жағдайы мен денсаулығын 2 критерий бойынша бағалаймыз !
+            <ol style="color:white;  text-align:center;">
+                <li> Физиологиялық сынақтардың көрсеткіштері </li>
+                <li> Педагогикалық тестілердің көрсеткіштері </li>
+            </ol>
+        </p>
+
+    </div>
+    <div class="col-md-4">
+        <h3 style=" text-align:center;"> Нұсқаулық </h3>
+        <p style=" text-align:center;">Барлық физиологиялық сынақтар мен педагогикалық тестілеулерді арнайы органдар жүзеге асыруы қажет</p>
+
+    </div>
+</div>
